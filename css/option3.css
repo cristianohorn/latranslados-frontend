@@ -1,0 +1,91 @@
+/* Opção 3 — composição contemporânea, alto contraste e hero dividido. */
+    :root {
+      --navy: #102b49;
+      --navy-deep: #0c2036;
+      --blue: #2e6595;
+      --lime: #b8ed43;
+      --lime-dark: #8ebc24;
+      --ink: #172a3d;
+      --muted: #607387;
+      --paper: #fff;
+      --mist: #f2f6f9;
+      --line: #e0e8ee;
+      --radius: 12px;
+      --shadow: 0 18px 45px rgb(16 43 73 / 10%);
+    }
+    body { background: white; }
+    .site-header { background: var(--navy-deep); border-bottom-color: rgb(255 255 255 / 10%); }
+    .hero {
+      min-height: 720px;
+      align-items: stretch;
+      background: var(--navy-deep);
+    }
+    .hero::before {
+      inset: 0 43% 0 0;
+      background: linear-gradient(90deg, var(--navy-deep), #15395c);
+    }
+    .hero::after {
+      position: absolute;
+      inset: 0 0 0 55%;
+      border-radius: 120px 0 0 120px;
+      background: linear-gradient(0deg, rgb(8 27 47 / 28%), transparent 55%),
+        url("../images/gramado-portico.jpg") center / cover no-repeat;
+      content: "";
+    }
+    .hero-content { display: flex; align-items: center; padding-top: 82px; padding-bottom: 35px; }
+    .hero-copy { max-width: 600px; }
+    .hero h1 { font-size: clamp(2.8rem, 5.2vw, 4.8rem); }
+    .hero h1 span { color: var(--lime); }
+    .hero .button { border-radius: 9px; }
+    .hero .button-quiet { border-radius: 9px; }
+    .hero .eyebrow { letter-spacing: .17em; }
+    .benefits { padding-top: 62px; }
+    .benefit-grid { gap: 0; border: 1px solid var(--line); border-radius: 16px; background: white; }
+    .benefit-card { border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+    .benefit-card + .benefit-card { border-left: 1px solid var(--line); }
+    .icon-box { width: 46px; height: 46px; border-radius: 12px; background: #edf5e0; color: #5b7f20; }
+    .about-visual { min-height: 470px; }
+    .about-photo { inset: 0; width: 100%; height: 100%; border-radius: 12px; }
+    .photo-caption { right: 18px; bottom: 18px; border-radius: 10px; }
+    .fleet-card { border-radius: 12px; }
+    .testimonials { background: var(--mist); color: var(--ink); }
+    .testimonials h2 { color: var(--navy); }
+    .testimonials .eyebrow { color: #557a1d; }
+    .testimonials .section-intro { color: var(--muted); }
+    .review-card { border-color: var(--line); border-radius: 12px; background: white; box-shadow: 0 9px 26px rgb(16 43 73 / 5%); }
+    .review-card blockquote { color: var(--ink); }
+    .review-by strong { color: var(--navy); }
+    .review-by span { color: var(--muted); }
+    .review-avatar { background: #edf5e0; color: #557a1d; }
+    .contact-band { background: var(--navy); }
+    .contact-inner h2 { color: white; }
+    .contact-inner .button { border-radius: 9px; background: var(--lime); color: var(--navy-deep); }
+    .contact-inner .button:hover { background: white; color: var(--navy-deep); }
+    .site-footer { background: #f2f6f9; color: var(--muted); }
+    .site-footer .brand { color: var(--navy); }
+    .site-footer .brand-tagline { color: var(--muted); }
+    .site-footer .brand-mark { border-color: rgb(16 43 73 / 25%); color: var(--navy); }
+    .footer-title { color: var(--navy); }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-bottom { border-top-color: var(--line); }
+    .whatsapp-bubble { border-radius: 10px; }
+    .whatsapp-circle { border-radius: 12px; }
+    @media (max-width: 780px) {
+      .hero { min-height: 760px; }
+      .hero::before { inset: 0; background: linear-gradient(90deg, rgb(8 27 47 / 88%), rgb(8 27 47 / 53%)); }
+      .hero::after { inset: 0; border-radius: 0; background: linear-gradient(90deg, rgb(8 27 47 / 55%), rgb(8 27 47 / 20%)), url("../images/gramado-portico.jpg") center / cover no-repeat; }
+      .hero-content { padding-top: 110px; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .benefit-card + .benefit-card { border-top: 1px solid var(--line); border-left: 0; }
+      .site-footer .site-nav a { color: white; }
+    }
+    @media (max-width: 480px) {
+      .hero { min-height: 720px; }
+      .hero h1 { font-size: clamp(2.55rem, 12vw, 3.65rem); }
+      .about-visual { min-height: 340px; }
+    }
+
+.hero-copy { margin-left: clamp(24px, 5vw, 72px); }
+@media (max-width: 780px) { .hero-copy { margin-left: 0; } }
+.image-credit { color: var(--muted); }
