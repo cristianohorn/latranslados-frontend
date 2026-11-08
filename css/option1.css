@@ -1,2 +1,0 @@
-.hero-copy { margin-left: clamp(24px, 5vw, 72px); }
-@media (max-width: 780px) { .hero-copy { margin-left: 0; } }
