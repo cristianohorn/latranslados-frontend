@@ -29,13 +29,15 @@
       inset: 0 0 0 55%;
       border-radius: 120px 0 0 120px;
       background: linear-gradient(0deg, rgb(8 27 47 / 28%), transparent 55%),
-        url("../images/gramado-portico.jpg") center / cover no-repeat;
+        url("../images/gramado-portico-pedra-flores-horizontal.webp") center / cover no-repeat;
       content: "";
     }
     .hero-content { display: flex; align-items: center; padding-top: 82px; padding-bottom: 35px; }
-    .hero-copy { max-width: 600px; }
-    .hero h1 { font-size: clamp(2.8rem, 5.2vw, 4.8rem); }
+    .hero-copy { flex: 1; max-width: 600px; container-type: inline-size; }
+    /* Tamanho proporcional à largura do bloco, para "Porto Alegre / Gramado" caber em uma linha. */
+    .hero h1 { font-size: min(4.8rem, 8.5cqi); }
     .hero h1 span { color: var(--lime); }
+    .hero h1 .hero-route { color: inherit; white-space: nowrap; }
     .hero .button { border-radius: 9px; }
     .hero .button-quiet { border-radius: 9px; }
     .hero .eyebrow { letter-spacing: .17em; }
@@ -74,7 +76,7 @@
     @media (max-width: 780px) {
       .hero { min-height: 760px; }
       .hero::before { inset: 0; background: linear-gradient(90deg, rgb(8 27 47 / 88%), rgb(8 27 47 / 53%)); }
-      .hero::after { inset: 0; border-radius: 0; background: linear-gradient(90deg, rgb(8 27 47 / 55%), rgb(8 27 47 / 20%)), url("../images/gramado-portico.jpg") center / cover no-repeat; }
+      .hero::after { inset: 0; border-radius: 0; background: linear-gradient(90deg, rgb(8 27 47 / 55%), rgb(8 27 47 / 20%)), url("../images/gramado-portico-pedra-flores-horizontal.webp") center / cover no-repeat; }
       .hero-content { padding-top: 110px; }
       .benefit-grid { grid-template-columns: 1fr; }
       .benefit-card + .benefit-card { border-top: 1px solid var(--line); border-left: 0; }
@@ -82,10 +84,59 @@
     }
     @media (max-width: 480px) {
       .hero { min-height: 720px; }
-      .hero h1 { font-size: clamp(2.55rem, 12vw, 3.65rem); }
       .about-visual { min-height: 340px; }
     }
 
 .hero-copy { margin-left: clamp(24px, 5vw, 72px); }
 @media (max-width: 780px) { .hero-copy { margin-left: 0; } }
 .image-credit { color: var(--muted); }
+
+/* Galeria de destinos — carrossel com rolagem horizontal e snap. */
+.gallery { padding-top: 0; }
+.gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+.gallery-heading h2 { margin-bottom: 0; }
+.gallery-controls { display: flex; flex: 0 0 auto; gap: 10px; }
+.gallery-button {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: white;
+  color: var(--navy);
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.gallery-button svg { width: 20px; height: 20px; }
+.gallery-button:hover:not(:disabled) { border-color: var(--navy); background: var(--navy); color: white; }
+.gallery-button:disabled { opacity: .35; cursor: default; }
+.gallery-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.gallery-track::-webkit-scrollbar { display: none; }
+.gallery-slide {
+  position: relative;
+  flex: 0 0 auto;
+  height: clamp(320px, 36vw, 440px);
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--navy);
+  scroll-snap-align: start;
+}
+.gallery-slide img { width: auto; height: 100%; max-width: min(80vw, 640px); object-fit: cover; }
+.gallery-slide::after { position: absolute; inset: 55% 0 0; background: linear-gradient(0deg, rgb(7 22 37 / 80%), transparent); content: ""; }
+.gallery-slide figcaption { position: absolute; z-index: 1; right: 18px; bottom: 16px; left: 18px; color: white; font-size: .95rem; font-weight: 700; }
+@media (max-width: 480px) {
+  .gallery-button { width: 42px; height: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track { scroll-behavior: auto; }
+}

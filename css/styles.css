@@ -104,7 +104,7 @@
       align-items: center;
       overflow: hidden;
       color: white;
-      background: #193751 url("../images/gramado-portico.jpg") center 52% / cover no-repeat;
+      background: #193751 url("../images/gramado-portico-pedra-flores-horizontal.webp") center 52% / cover no-repeat;
     }
     .hero::before {
       position: absolute;
@@ -363,6 +363,9 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid > :first-child { grid-column: 1 / -1; }
       .site-footer { margin-bottom: calc(92px + env(safe-area-inset-bottom)); }
+      /* Alvos de toque confortáveis (~44px) nos links do rodapé. */
+      .footer-links { gap: 0; }
+      .footer-links a { padding-block: 10px; }
     }
 
     @media (max-width: 480px) {
@@ -370,10 +373,9 @@
       .header-inner { min-height: 72px; }
       .brand-mark { width: 39px; height: 39px; }
       .brand-name { font-size: .88rem; }
-      .brand-tagline { font-size: .62rem; }
+      .brand-tagline { font-size: .75rem; }
       .hero { min-height: 720px; min-height: min(780px, 100svh); }
       .hero-content { padding-top: 92px; }
-      .hero h1 { font-size: clamp(2.55rem, 13vw, 3.65rem); }
       .hero-actions { align-items: stretch; flex-direction: column; }
       .hero-actions .button { width: 100%; }
       .hero-scroll { display: none; }

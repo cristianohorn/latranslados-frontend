@@ -3,9 +3,36 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://latranslados.com/</loc>
+    <lastmod>2026-11-08</lastmod>
     <image:image>
-      <image:loc>https://latranslados.com/images/gramado-portico.jpg</image:loc>
-      <image:caption>Pórtico de Gramado, destino do transfer privativo da LaTranslados</image:caption>
+      <image:loc>https://latranslados.com/images/gramado-portico-pedra-flores-horizontal.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/spin-portal-bem-vindos-gramado.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-entardecer.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-noite.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-dia.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/gramado-lago-negro-hortensias.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/gramado-roda-gigante-spin.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/motorista_lauri.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/spin1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/spin3.jpg</image:loc>
     </image:image>
   </url>
 </urlset>

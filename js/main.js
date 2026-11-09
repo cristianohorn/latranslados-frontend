@@ -17,3 +17,28 @@ const menuToggle = document.querySelector(".menu-toggle");
     });
 
     document.querySelector("#current-year").textContent = String(new Date().getFullYear());
+
+    const galleryTrack = document.querySelector(".gallery-track");
+    if (galleryTrack) {
+      const prevButton = document.querySelector("[data-gallery-prev]");
+      const nextButton = document.querySelector("[data-gallery-next]");
+
+      const step = () => {
+        const slide = galleryTrack.querySelector(".gallery-slide");
+        const gap = parseFloat(getComputedStyle(galleryTrack).columnGap) || 0;
+        return slide ? slide.offsetWidth + gap : galleryTrack.clientWidth;
+      };
+
+      const updateButtons = () => {
+        const maxScroll = galleryTrack.scrollWidth - galleryTrack.clientWidth;
+        prevButton.disabled = galleryTrack.scrollLeft <= 2;
+        nextButton.disabled = galleryTrack.scrollLeft >= maxScroll - 2;
+      };
+
+      prevButton.addEventListener("click", () => galleryTrack.scrollBy({ left: -step() }));
+      nextButton.addEventListener("click", () => galleryTrack.scrollBy({ left: step() }));
+      galleryTrack.addEventListener("scroll", updateButtons, { passive: true });
+      window.addEventListener("resize", updateButtons);
+      galleryTrack.querySelectorAll("img").forEach((img) => img.addEventListener("load", updateButtons));
+      updateButtons();
+    }
