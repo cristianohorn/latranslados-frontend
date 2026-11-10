@@ -42,3 +42,45 @@ const menuToggle = document.querySelector(".menu-toggle");
       galleryTrack.querySelectorAll("img").forEach((img) => img.addEventListener("load", updateButtons));
       updateButtons();
     }
+
+    // Faixa de consentimento de cookies (LGPD).
+    const cookieBanner = document.querySelector(".cookie-banner");
+    const CONSENT_KEY = "lt-cookie-consent";
+    const readConsent = () => { try { return localStorage.getItem(CONSENT_KEY); } catch { return null; } };
+
+    if (cookieBanner) {
+      if (!readConsent()) cookieBanner.hidden = false;
+
+      cookieBanner.addEventListener("click", (event) => {
+        const choice = event.target.closest("[data-cookie-choice]")?.dataset.cookieChoice;
+        if (!choice) return;
+        try { localStorage.setItem(CONSENT_KEY, choice); } catch {}
+        window.gtag?.("consent", "update", { analytics_storage: choice });
+        cookieBanner.hidden = true;
+      });
+
+      document.querySelector("[data-cookie-open]")?.addEventListener("click", () => {
+        cookieBanner.hidden = false;
+        cookieBanner.querySelector("[data-cookie-choice='granted']").focus();
+      });
+    }
+
+    // Eventos do GA4: cliques de contato, com a seção onde o link está.
+    const linkLocation = (link) => {
+      if (link.closest(".whatsapp-float")) return "botao_flutuante";
+      if (link.closest(".site-header")) return "menu";
+      if (link.closest(".site-footer")) return "rodape";
+      if (link.closest(".contact-band")) return "faixa_contato";
+      return link.closest("section[id]")?.id || "outro";
+    };
+
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest("a[href]");
+      if (!link || typeof window.gtag !== "function") return;
+      const href = link.getAttribute("href");
+      let name = null;
+      if (href.startsWith("https://wa.me/")) name = "whatsapp_click";
+      else if (href.startsWith("tel:")) name = "phone_click";
+      else if (href.includes("instagram.com")) name = "instagram_click";
+      if (name) window.gtag("event", name, { link_location: linkLocation(link), link_url: href });
+    });

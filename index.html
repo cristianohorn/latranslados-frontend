@@ -26,6 +26,30 @@
   <meta name="twitter:image" content="https://latranslados.com/images/gramado-portico-pedra-flores-horizontal.jpg">
   <link rel="preload" as="image" type="image/webp" href="images/gramado-portico-pedra-flores-horizontal.webp" fetchpriority="high">
   <title>Transfer Aeroporto Porto Alegre ↔ Gramado | LaTranslados</title>
+  <script>
+    // Google Analytics 4 com Consent Mode v2: sem cookies até o visitante aceitar (LGPD).
+    // Só mede no domínio oficial, para a prévia do GitHub Pages e testes locais não poluírem os dados.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    (function () {
+      var consent = null;
+      try { consent = localStorage.getItem("lt-cookie-consent"); } catch (e) {}
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: consent === "granted" ? "granted" : "denied"
+      });
+      if (location.hostname === "latranslados.com") {
+        var tag = document.createElement("script");
+        tag.async = true;
+        tag.src = "https://www.googletagmanager.com/gtag/js?id=G-J2D8WCEN0N";
+        document.head.appendChild(tag);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J2D8WCEN0N");
+    })();
+  </script>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/option3.css">
   <script type="application/ld+json">
@@ -408,9 +432,18 @@
       <div class="footer-bottom">
         <p>© <span id="current-year">2026</span> LaTranslados. Todos os direitos reservados.</p>
         <p>Feito para você viajar com tranquilidade.</p>
+        <button class="cookie-preferences" type="button" data-cookie-open>Preferências de cookies</button>
       </div>
     </div>
   </footer>
+
+  <div class="cookie-banner" role="region" aria-label="Aviso de cookies" hidden>
+    <p>Usamos cookies do Google Analytics para entender como o site é usado e melhorar o atendimento. Nenhum dado é usado para anúncios.</p>
+    <div class="cookie-actions">
+      <button class="cookie-button cookie-button-quiet" type="button" data-cookie-choice="denied">Recusar</button>
+      <button class="cookie-button" type="button" data-cookie-choice="granted">Aceitar</button>
+    </div>
+  </div>
 
   <a class="whatsapp-float" href="https://wa.me/5551998815818?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20com%20um%20transfer." target="_blank" rel="noopener noreferrer" aria-label="Precisa de ajuda? Fale com a LaTranslados pelo WhatsApp">
     <span class="whatsapp-bubble">Precisa de ajuda?<br>Fale comigo!</span>
