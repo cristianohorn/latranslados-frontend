@@ -5,6 +5,7 @@
 //
 // A prévia recebe <meta name="robots" content="noindex">, porque um robots.txt numa subpasta
 // do GitHub Pages (/latranslados-frontend/) é ignorado pelos buscadores.
+import { createHash } from "node:crypto";
 import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -22,6 +23,18 @@ for (const name of ["css", "images", "js"]) {
 
 for (const name of ["index.html", "404.html", "favicon.svg", "apple-touch-icon.png"]) {
   cpSync(path.join(root, name), path.join(output, name));
+}
+
+// Cache busting: acrescenta ?v=<hash do conteúdo> aos CSS/JS referenciados nas páginas.
+// Assim, a cada publicação o navegador e a CDN da Hostinger buscam a versão nova,
+// mesmo com o cache longo definido no .htaccess.
+for (const name of ["index.html", "404.html"]) {
+  const file = path.join(output, name);
+  const html = readFileSync(file, "utf8").replace(/((?:href|src)=")(\/?)((?:css|js)\/[\w.-]+\.(?:css|js))(")/g, (match, attr, slash, asset, quote) => {
+    const hash = createHash("sha1").update(readFileSync(path.join(root, asset))).digest("hex").slice(0, 8);
+    return `${attr}${slash}${asset}?v=${hash}${quote}`;
+  });
+  writeFileSync(file, html);
 }
 
 if (production) {
