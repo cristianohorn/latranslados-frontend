@@ -191,3 +191,35 @@
   .cookie-banner { right: 12px; bottom: 12px; left: 12px; flex-direction: column; align-items: stretch; gap: 12px; }
   .cookie-actions .cookie-button { flex: 1; }
 }
+
+/* Depoimentos em carrossel (mesmo comportamento da galeria). */
+.gallery-heading .section-intro { margin-bottom: 0; }
+.review-track {
+  display: flex;
+  gap: 18px;
+  /* respiro para a sombra dos cartões não ser cortada pela rolagem */
+  margin: -8px -8px -24px;
+  padding: 8px 8px 24px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.review-track::-webkit-scrollbar { display: none; }
+.review-track .review-card {
+  display: flex;
+  flex: 0 0 min(360px, 85%);
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+.review-track .review-card blockquote { flex: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .review-track { scroll-behavior: auto; }
+}
+.gallery-heading h2 + .section-intro { margin-top: 12px; }
+/* No celular a navegação é por arrasto; as setas só apertariam o título. */
+@media (max-width: 600px) {
+  .gallery-controls { display: none; }
+}

@@ -271,7 +271,7 @@
       </div>
     </section>
 
-    <section class="section gallery" id="galeria" aria-labelledby="gallery-title">
+    <section class="section gallery" id="galeria" aria-labelledby="gallery-title" data-carousel>
       <div class="container">
         <div class="gallery-heading">
           <div>
@@ -279,33 +279,45 @@
             <h2 id="gallery-title">Destinos da Serra Gaúcha.</h2>
           </div>
           <div class="gallery-controls">
-            <button class="gallery-button" type="button" data-gallery-prev aria-label="Foto anterior">
+            <button class="gallery-button" type="button" data-carousel-prev aria-label="Foto anterior">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             </button>
-            <button class="gallery-button" type="button" data-gallery-next aria-label="Próxima foto">
+            <button class="gallery-button" type="button" data-carousel-next aria-label="Próxima foto">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
         </div>
-        <div class="gallery-track" tabindex="0" role="region" aria-label="Galeria de fotos: role para o lado para ver mais">
+        <div class="gallery-track" data-carousel-track tabindex="0" role="region" aria-label="Galeria de fotos: role para o lado para ver mais">
+          <figure class="gallery-slide">
+            <img src="images/gramado-portal-bem-vindos-por-do-sol.webp" alt="Portal Bem-vindos a Gramado ao pôr do sol, com decoração de Natal" width="880" height="1184" loading="lazy">
+            <figcaption>Portal de Gramado ao pôr do sol</figcaption>
+          </figure>
+          <figure class="gallery-slide">
+            <img src="images/canela-catedral-de-pedra-noite-letreiro.webp" alt="Catedral de Pedra de Canela iluminada à noite, com o letreiro da cidade" width="720" height="1280" loading="lazy">
+            <figcaption>Catedral de Pedra · Canela</figcaption>
+          </figure>
           <figure class="gallery-slide">
             <img src="images/spin-portal-bem-vindos-gramado.webp" alt="Chevrolet Spin da LaTranslados em frente ao portal Bem-vindos a Gramado" width="960" height="1280" loading="lazy">
             <figcaption>Portal de Gramado</figcaption>
-          </figure>
-          <figure class="gallery-slide">
-            <img src="images/canela-catedral-de-pedra-entardecer.webp" alt="Catedral de Pedra de Canela ao entardecer" width="960" height="1280" loading="lazy">
-            <figcaption>Catedral de Pedra · Canela</figcaption>
           </figure>
           <figure class="gallery-slide">
             <img src="images/gramado-lago-negro-hortensias.jpg" alt="Lago Negro cercado de hortênsias e araucárias em Gramado" width="720" height="898" loading="lazy">
             <figcaption>Lago Negro · Gramado</figcaption>
           </figure>
           <figure class="gallery-slide">
+            <img src="images/canela-portal-sonho-de-natal.webp" alt="Pórtico de Canela iluminado para o Sonho de Natal" width="960" height="1280" loading="lazy">
+            <figcaption>Sonho de Natal · Canela</figcaption>
+          </figure>
+          <figure class="gallery-slide">
+            <img src="images/canela-catedral-de-pedra-entardecer.webp" alt="Catedral de Pedra de Canela ao entardecer" width="960" height="1280" loading="lazy">
+            <figcaption>Catedral de Pedra ao entardecer</figcaption>
+          </figure>
+          <figure class="gallery-slide">
             <img src="images/gramado-roda-gigante-spin.webp" alt="Chevrolet Spin estacionada diante de uma roda-gigante ao pôr do sol" width="960" height="1280" loading="lazy">
             <figcaption>Roda-gigante ao pôr do sol</figcaption>
           </figure>
           <figure class="gallery-slide">
-            <img src="images/canela-catedral-de-pedra-noite.webp" alt="Catedral de Pedra de Canela iluminada à noite" width="960" height="1280" loading="lazy">
+            <img src="images/canela-catedral-de-pedra-noite-flores.webp" alt="Catedral de Pedra de Canela iluminada à noite, com canteiro de flores" width="960" height="1280" loading="lazy">
             <figcaption>Catedral de Pedra à noite</figcaption>
           </figure>
           <figure class="gallery-slide">
@@ -350,12 +362,24 @@
       </div>
     </section>
 
-    <section class="section testimonials" id="avaliacoes" aria-labelledby="reviews-title">
+    <section class="section testimonials" id="avaliacoes" aria-labelledby="reviews-title" data-carousel>
       <div class="container">
-        <p class="eyebrow">Viajar bem é melhor quando compartilhado</p>
-        <h2 id="reviews-title">Quem viaja com a gente recomenda.</h2>
-        <p class="section-intro">Atendimento atencioso, paciência e segurança fazem parte de cada viagem.</p>
-        <div class="review-grid">
+        <div class="gallery-heading">
+          <div>
+            <p class="eyebrow">Viajar bem é melhor quando compartilhado</p>
+            <h2 id="reviews-title">Quem viaja com a gente recomenda.</h2>
+            <p class="section-intro">Atendimento atencioso, paciência e segurança fazem parte de cada viagem.</p>
+          </div>
+          <div class="gallery-controls">
+            <button class="gallery-button" type="button" data-carousel-prev aria-label="Avaliação anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="gallery-button" type="button" data-carousel-next aria-label="Próxima avaliação">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="review-track" data-carousel-track tabindex="0" role="region" aria-label="Avaliações de clientes: role para o lado para ver mais">
           <article class="review-card">
             <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
             <blockquote>“Lauri se tornou um amigo entre idas e vindas POA x Gramado, super atencioso, conhece os melhores restaurantes da região a caminho do destino, boas referências da região, sem contar como é um bom motorista. Sempre o indicamos para amigos que vão. Até dos capixabas!”</blockquote>

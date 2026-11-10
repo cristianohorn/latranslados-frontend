@@ -3,27 +3,9 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://latranslados.com/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <image:image>
       <image:loc>https://latranslados.com/images/gramado-portico-pedra-flores-horizontal.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://latranslados.com/images/spin-portal-bem-vindos-gramado.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-entardecer.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-noite.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-dia.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://latranslados.com/images/gramado-lago-negro-hortensias.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://latranslados.com/images/gramado-roda-gigante-spin.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://latranslados.com/images/motorista_lauri.webp</image:loc>
@@ -33,6 +15,36 @@
     </image:image>
     <image:image>
       <image:loc>https://latranslados.com/images/spin3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/gramado-portal-bem-vindos-por-do-sol.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-noite-letreiro.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/spin-portal-bem-vindos-gramado.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/gramado-lago-negro-hortensias.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/canela-portal-sonho-de-natal.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-entardecer.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/gramado-roda-gigante-spin.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-noite-flores.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/motorista-lauri-spin-aeroporto.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://latranslados.com/images/canela-catedral-de-pedra-dia.webp</image:loc>
     </image:image>
   </url>
 </urlset>
