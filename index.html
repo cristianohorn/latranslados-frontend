@@ -34,11 +34,14 @@
     (function () {
       var consent = null;
       try { consent = localStorage.getItem("lt-cookie-consent"); } catch (e) {}
+      var granted = consent === "granted" ? "granted" : "denied";
+      // O aceite libera medição (Analytics) e atribuição de conversões do Google Ads.
+      // Personalização de anúncios (remarketing) continua sempre negada.
       gtag("consent", "default", {
-        ad_storage: "denied",
-        ad_user_data: "denied",
+        ad_storage: granted,
+        ad_user_data: granted,
         ad_personalization: "denied",
-        analytics_storage: consent === "granted" ? "granted" : "denied"
+        analytics_storage: granted
       });
       if (location.hostname === "latranslados.com") {
         var tag = document.createElement("script");
@@ -462,7 +465,7 @@
   </footer>
 
   <div class="cookie-banner" role="region" aria-label="Aviso de cookies" hidden>
-    <p>Usamos cookies do Google Analytics para entender como o site é usado e melhorar o atendimento. Nenhum dado é usado para anúncios.</p>
+    <p>Usamos cookies do Google Analytics e do Google Ads para entender como o site é usado e medir o resultado dos nossos anúncios. Não fazemos anúncios personalizados com seus dados.</p>
     <div class="cookie-actions">
       <button class="cookie-button cookie-button-quiet" type="button" data-cookie-choice="denied">Recusar</button>
       <button class="cookie-button" type="button" data-cookie-choice="granted">Aceitar</button>

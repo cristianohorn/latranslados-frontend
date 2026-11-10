@@ -57,7 +57,7 @@ const menuToggle = document.querySelector(".menu-toggle");
         const choice = event.target.closest("[data-cookie-choice]")?.dataset.cookieChoice;
         if (!choice) return;
         try { localStorage.setItem(CONSENT_KEY, choice); } catch {}
-        window.gtag?.("consent", "update", { analytics_storage: choice });
+        window.gtag?.("consent", "update", { analytics_storage: choice, ad_storage: choice, ad_user_data: choice });
         cookieBanner.hidden = true;
       });
 
